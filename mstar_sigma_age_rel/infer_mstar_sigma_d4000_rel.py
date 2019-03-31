@@ -5,7 +5,7 @@ import h5py
 
 
 f = open('../lega-c_sersic_it2_stellarpop_pars.cat', 'r')
-mstar, merr, t90, reff, sigma, sigma_err, hb_ew, oii_ew, d4000, hd_ew = np.loadtxt(f, usecols=(6, 7, 10, 13, 15, 16, 17, 19, 20, 21, 22), unpack=True)
+mstar, merr, t90, reff, sigma, sigma_err, hb_ew, oii_ew, d4000, hd_ew = np.loadtxt(f, usecols=(6, 7, 10, 13, 16, 17, 19, 20, 21, 22), unpack=True)
 f.close()
 
 good = (hb_ew == hb_ew) & (sigma_err > 0.) & (sigma > 0.) & (sigma < 600.) & (d4000 == d4000) & (d4000 > 0.)
